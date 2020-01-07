@@ -1,18 +1,16 @@
 from random import randint
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtGui import QPainter, QPen, QColor
-from PyQt5.QtCore import Qt
-from PyQt5 import uic
+from UI import UI
 import sys
 
 
-class MainApp(QMainWindow):
+class MainApp(UI):
     def __init__(self):
         super().__init__()
         self.diam = [200 for i in range(8)]
         self.color = [(0, 0, 0) for i in range(8)]
         self.pressed = False
-        uic.loadUi("UI.ui", self)
         self.button.clicked.connect(self.newd)
 
     def newd(self):
